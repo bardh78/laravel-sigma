@@ -1,0 +1,52 @@
+{
+    "name": "bardh78/laravel-sigma",
+    "description": "Laravel Sigma Package",
+    "keywords": [
+        "bardh78",
+        "laravel-sigma"
+    ],
+    "homepage": "https://github.com/bardh78/laravel-sigma",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bardhyl Fejzullahu",
+            "email": "bardh7@icloud.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bardh78\\LaravelSigma\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bardh78\\LaravelSigma\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bardh78\\LaravelSigma\\LaravelSigmaServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

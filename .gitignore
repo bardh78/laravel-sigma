@@ -1,0 +1,26 @@
+/vendor/
+/node_modules/
+/.idea/
+/.vscode/
+/.DS_Store
+/.env
+/.env.local
+/.phpunit.result.cache
+/coverage/
+composer.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+# Laravel specific
+/storage/
+/bootstrap/cache/
+/public/storage
+# PHPUnit
+phpunit.xml
+phpunit.xml.dist
+# OS files
+Thumbs.db
+git-push.sh
+xcommit.sh
+
