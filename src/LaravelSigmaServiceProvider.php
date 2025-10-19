@@ -4,8 +4,10 @@ namespace Bardh78\LaravelSigma;
 
 use Bardh78\LaravelSigma\Renderers\ErrorPageRenderer;
 use Bardh78\LaravelSigma\Renderers\SigmaExceptionRenderer;
+use Bardh78\LaravelSigma\Http\Controllers\EditorController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class LaravelSigmaServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,18 @@ class LaravelSigmaServiceProvider extends ServiceProvider
                 __DIR__.'/../config/sigma.php' => config_path('sigma.php'),
             ], 'config');
         }
+
+        // Register routes for editor functionality
+        $this->registerRoutes();
+    }
+
+    protected function registerRoutes(): void
+    {
+        if (!app()->environment('local', 'development')) {
+            return;
+        }
+
+        Route::post('/__sigma/open-editor', [EditorController::class, 'openEditor']);
     }
 
     /**
